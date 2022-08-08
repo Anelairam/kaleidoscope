@@ -1,0 +1,11 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-color: aqua;
+}
+
+.index-base{
+    background: url('/media/main_image.jpg');
+}
