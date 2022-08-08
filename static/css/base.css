@@ -8,4 +8,5 @@ body{
 
 .index-base{
     background: url('/media/main_image.jpg');
+    height: 250px;
 }
