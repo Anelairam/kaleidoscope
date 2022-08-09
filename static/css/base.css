@@ -10,3 +10,7 @@ body{
     background: url('/media/camera_main.png');
     height: 414px;
 }
+
+.header-container {
+    padding-top: 164px;
+}
