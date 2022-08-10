@@ -1,10 +1,18 @@
 <div class="col">
-    <h6>
-        It works
-    </h6>
+    <ul>
+        <li>
+            <a href="{% url 'portfolio' %}">All</a>
+        </li>
+        <li>
+            Urban
+        </li>
+        <li>
+            Landscape
+        </li>
+    </ul>
 </div>
 <div class="col">
-    <form method="GET" action="">
+    <form method="GET" action="{% url 'portfolio' %}">
         <div class="input-group w-100">
             <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
             <div class="input-group-append">

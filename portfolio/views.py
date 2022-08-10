@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
+from django.db.models import Q
 from .models import Photo
 
 # Create your views here.
@@ -6,9 +8,21 @@ from .models import Photo
 def portfolio(request):
     """The view returns the index page"""
     photos = Photo.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, 'Not such information')
+                return redirect(reverse('portfolio'))
+            
+            queries = Q(label__icontains=query) | Q(location__icontains=query)
+            photos = photos.filter(queries)
 
     context = {
         'photos': photos,
+        'search_item': query
     }
 
     return render(request, 'portfolio/portfolio.html', context)
