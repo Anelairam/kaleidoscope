@@ -2,6 +2,18 @@
 ---
 
 ## Introduction
+* * Website Link goes here * *
+
+Kaleidoscope is my fifth and last project submision for the Full Stack E-Commerece Diploma by Code Institute.
+
+The project's theme is a photographer's website, where the photographer as the owner of it can show his work, sale his photos and offer online photography courses as well as organised photography tours. Any user has the ability to stay as simple visitor but also to register or login in order to buy any of the photographer's services. The main technologies that the application uses are: 
+ -Html
+ -Css
+ -Bootstrap
+ -Javascript
+ -Python
+ -Django
+
 ---
 
 <details><summary>Contents</summary>
