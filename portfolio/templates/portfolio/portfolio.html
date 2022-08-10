@@ -34,7 +34,7 @@
                                 {% if photo.price != NULL %}
                                     <a href="#" class="btn btn-primary">Shop</a>
                                 {% else %}
-                                    <a href="#" class="btn btn-primary">Show more</a>
+                                    <a href="{% url 'photo_detail' photo.id %}" class="btn btn-primary">Show more</a>
                                 {% endif %}
                             </div>
                         </div>
