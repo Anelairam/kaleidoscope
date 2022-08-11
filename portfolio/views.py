@@ -41,7 +41,7 @@ def photo_detail(request, photo_id):
     photo = get_object_or_404(Photo, pk=photo_id)
 
     context = {
-        'photos': photo,
+        'photo': photo,
     }
 
     return render(request, 'portfolio/photo_detail.html', context)
