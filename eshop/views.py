@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from .models import OnlineCourse, Tour
-from portfolio.models import Photo
+from portfolio.models import OnlineCourse, Tour, Photo
 
 # Create your views here.
 

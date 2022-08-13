@@ -34,28 +34,6 @@
                             </div>
                         {% endif %}
                     {% endfor %}
-                    {% for onlinecourse in onlinecourses %}
-                        <div class="card" style="width: 18rem;">
-                            <img src="" class="card-img-top" alt="{{ onlinecourse.title }}">
-                            <div class="card-body">
-                                <a href="{% url 'onlinecourse_detail' onlinecourse.id %}"><h5 class="card-title">{{ onlinecourse.title }}</h5></a>
-                                <p class="card-text">{{ onlinecourse.description }}</p>
-                                <p class="card-text">{{ onlinecourse.price }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    {% for tour in tours %}
-                        <div class="card" style="width: 18rem;">
-                            <img src="#" class="card-img-top" alt="{{ tour.title }}">
-                            <div class="card-body">
-                                <a href="{% url 'tour_detail' tour.id %}"><h5 class="card-title">{{ tour.title }}</h5></a>
-                                <p class="card-text">{{ tour.description }}</p>
-                                <p class="card-text">{{ tour.location }}</p>
-                                <p class="card-text">{{ tour.price }}</p>
-                                <button>Show more</button>
-                            </div>
-                        </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>
