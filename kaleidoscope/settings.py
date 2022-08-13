@@ -29,7 +29,7 @@ DEBUG = True
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-anelairam-kaleidoscope-1ednhrzx19y.ws-eu60.gitpod.io']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ci5.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -110,12 +110,17 @@ WSGI_APPLICATION = 'kaleidoscope.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # DATABASES = {
 #     'default':  dj_database_url.parse('postgres://iognearkcygabp:e7fff6eb68f2afcc0400ab753f031f3b388d030bc5185ecb00b168977d759165@ec2-54-246-185-161.eu-west-1.compute.amazonaws.com:5432/df2ubanud6vvhr')
