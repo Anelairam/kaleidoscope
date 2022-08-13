@@ -7,15 +7,15 @@ def cart(request):
     return render(request, 'shopping_cart/cart.html')
 
 
-def add_to_cart(request, photo_id):
+def add_to_cart(request, product_id):
     
     redirect_url = request.POST.get('redirect_url')
-    cart = request.session.get('cart', {})
+    cart = request.session.get('cart', {})  
 
-    if photo_id in list(cart.keys()):
+    if product_id in list(cart.keys()):
         print('Item exists')
     else:
-        cart[photo_id] = photo_id
+        cart[product_id] =product_id
 
     request.session['cart'] = cart
     print(request.session['cart'])

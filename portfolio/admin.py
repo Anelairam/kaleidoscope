@@ -1,14 +1,16 @@
 from django.contrib import admin
-from .models import Photo, Category, OnlineCourse, Tour
+from .models import Product, Category, Type
 # Register your models here.
 
-class PhotoAdmin(admin.ModelAdmin):
+class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'name',
-        'label',
-        'price',
-        'sku',
+        'category',
+        'type',
+        'location',
         'size',
+        'description',
+        'price',
         'image',
     )
 
@@ -17,26 +19,13 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
-
-class OnlineCourseAdmin(admin.ModelAdmin):
+class TypeAdmin(admin.ModelAdmin):
     list_display = (
-        'title',
-        'category',
-        'description',
-        'price',
-        'sku',
-    )
-
-class TourAdmin(admin.ModelAdmin):
-    list_display = (
-        'title',
-        'location',
-        'description',
-        'price',
+        'name',
     )
 
 
-admin.site.register(Photo, PhotoAdmin)
+
+admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(OnlineCourse, OnlineCourseAdmin)
-admin.site.register(Tour, TourAdmin)
+admin.site.register(Type, TypeAdmin)

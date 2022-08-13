@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from portfolio.models import Photo
+# from portfolio.models import Photo
 
 def cart_contents(request):
 
@@ -17,10 +17,13 @@ def cart_contents(request):
     #         'photo': photo,
     #     })
 
+    grand_total = total
+
     context = {
         'cart_items': cart_items,
         'total': total,
         'item_count': item_count,
+        'grand_total': grand_total,
     }
 
     return context

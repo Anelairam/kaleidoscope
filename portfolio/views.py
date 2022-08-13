@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Photo, Category, OnlineCourse, Tour
+from .models import Product, Category
 
 
 # Create your views here.
 
 def portfolio(request):
     """The view returns the index page"""
-    photos = Photo.objects.all()
+    products = Product.objects.all()
     query = None
     labels = None
 
@@ -23,7 +23,7 @@ def portfolio(request):
             photos = photos.filter(queries)
 
     context = {
-        'photos': photos,
+        'products': products,
         'search_item': query,
         'current_label': labels,
     }
@@ -31,34 +31,12 @@ def portfolio(request):
     return render(request, 'portfolio/portfolio.html', context)
 
 
-def photo_detail(request, photo_id):
+def product_detail(request, product_id):
     """The view returns the index page"""
-    photo = get_object_or_404(Photo, pk=photo_id)
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {
-        'photo': photo,
+        'product': product,
     }
 
-    return render(request, 'portfolio/photo_detail.html', context)
-
-
-def onlinecourse_detail(request, onlinecourse_id):
-    """The view returns the index page"""
-    onlinecourse = get_object_or_404(OnlineCourse, pk=onlinecourse_id)
-
-    context = {
-        'onlinecourse': onlinecourse,
-    }
-
-    return render(request, 'portfolio/onlinecourse_detail.html', context)
-
-
-def tour_detail(request, tour_id):
-    """The view returns the index page"""
-    tour = get_object_or_404(Tour, pk=tour_id)
-
-    context = {
-        'tour': tour,
-    }
-
-    return render(request, 'portfolio/tour_detail.html', context)
+    return render(request, 'portfolio/product_detail.html', context)

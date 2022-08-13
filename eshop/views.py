@@ -1,17 +1,14 @@
 from django.shortcuts import render
-from portfolio.models import OnlineCourse, Tour, Photo
+from portfolio.models import Product
 
 # Create your views here.
 
 def eshop(request):
     """The view returns the index page"""
-    online_courses = OnlineCourse.objects.all()
-    tours = Tour.objects.all()
-    photos = Photo.objects.all()
+    products = Product.objects.all()
+
 
     context = {
-        'onlinecourses': online_courses,
-        'tours': tours,
-        'photos': photos,
+        'products': products,
     }
     return render(request, 'eshop/eshop.html', context)

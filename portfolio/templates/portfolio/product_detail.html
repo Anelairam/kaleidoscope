@@ -6,8 +6,8 @@
         <div class="row">
             <div class="col">
                 <h1 class="page_heading text-center">
-                    Online course DETAIL 
-                    {{ photo.name }}
+                    PHOTO DETAIL 
+                    {{ product.name }}
                 </h1>
                 <hr>
             </div>
@@ -21,17 +21,17 @@
                 </div>
             </div>
             <div class="col">
-                <p class="mb-0">{{ photo.name }}</p>
-                <p class="mb-0">{{ photo.size }}</p>
-                <p class="mb-0">{{ photo.location }}</p>
-                <p class="mb-0">{{ photo.label }}</p>
-                {% if photo.price != NULL %}
-                    <p class="mb-0">{{ photo.price }}</p>
+                <p class="mb-0">{{ product.name }}</p>
+                <p class="mb-0">{{ product.size }}</p>
+                <p class="mb-0">{{ product.location }}</p>
+                <p class="mb-0">{{ product.category }}</p>
+                {% if product.price != NULL %}
+                    <p class="mb-0">{{ product.price }}</p>
                     <button>Add to cart</button>
                 {% endif %}
             </div>
             <div class="col">
-                <form class="form" action="{% url 'add_to_cart' onlinecourse.id %}" method="POST">
+                <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                     {% csrf_token %}
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
