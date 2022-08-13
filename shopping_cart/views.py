@@ -9,11 +9,8 @@ def cart(request):
 
 def add_to_cart(request, photo_id):
     
-    quantity = 1
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
-
-    cart[photo_id] = quantity
 
     request.session['cart'] = cart
     print(request.session['cart'])
