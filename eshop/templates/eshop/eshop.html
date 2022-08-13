@@ -5,9 +5,58 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <h1><E-shop></E-shop></h1>
-                <h1 class="bg-success">{{ onlinecourses }}</h1>
-                <h1 class="bg-danger">{{ tours }}</h1>
+                {% include 'includes/sorting-n-searching.html' %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="forsale-container">
+                <div class="row">
+                    {% for photo in photos %}
+                        {% if photo.price != NULL %}
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{ photo.image_url }}" class="card-img-top" alt="{{ photo.name }}">
+                                <div class="card-body">
+                                    <a href="{% url 'photo_detail' photo.id %}"><h5 class="card-title">{{ photo.name }}</h5></a>
+                                    <p class="card-text">{{ photo.label }}</p>
+                                    <p class="card-text">{{ photo.location }}</p>
+                                    {% if photo.price != NULL %}
+                                        {% if request.user.is_authenticated %} 
+                                            <a href="#" class="btn btn-primary">Add</a>
+                                            <a href="{% url 'photo_detail' photo.id %}" class="btn btn-primary">Show more</a>
+                                        {% else %}
+                                            <a href="#" class="btn btn-primary">Shop</a>
+                                            <a href="{% url 'photo_detail' photo.id %}" class="btn btn-primary">Show more</a>
+                                        {% endif %}
+                                    {% else %}
+                                        <a href="{% url 'photo_detail' photo.id %}" class="btn btn-primary">Show more</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    {% for onlinecourse in onlinecourses %}
+                        <div class="card" style="width: 18rem;">
+                            <img src="" class="card-img-top" alt="{{ onlinecourse.title }}">
+                            <div class="card-body">
+                                <a href="{% url 'onlinecourse_detail' onlinecourse.id %}"><h5 class="card-title">{{ onlinecourse.title }}</h5></a>
+                                <p class="card-text">{{ onlinecourse.description }}</p>
+                                <p class="card-text">{{ onlinecourse.price }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% for tour in tours %}
+                        <div class="card" style="width: 18rem;">
+                            <img src="#" class="card-img-top" alt="{{ tour.title }}">
+                            <div class="card-body">
+                                <a href="{% url 'tour_detail' tour.id %}"><h5 class="card-title">{{ tour.title }}</h5></a>
+                                <p class="card-text">{{ tour.description }}</p>
+                                <p class="card-text">{{ tour.location }}</p>
+                                <p class="card-text">{{ tour.price }}</p>
+                                <button>Show more</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

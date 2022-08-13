@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="image-container">
+                        <a href="#" target="_blank">
+                            <img class="card-img-top img-fluid" src="" alt="{{ tour.title }}">
+                        </a>
+                </div>
+            </div>
+            <div class="col">
+                <p class="mb-0">{{ tour.title }}</p>
+                <p class="mb-0">{{ tour.description }}</p>
+                <p class="mb-0">{{ tour.location }}</p>
+                <p class="mb-0">{{ tour.price }}</p>
+            </div>
+            <div class="col">
+                <!-- <form class="form" action="{% url 'add_to_cart' photo.id %}" method="POST">
+                    {% csrf_token %}
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                </form> -->
+            </div>
+        </div>
+    </div>
+{% endblock %}

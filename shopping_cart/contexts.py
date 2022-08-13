@@ -6,16 +6,16 @@ def cart_contents(request):
     cart_items = []
     total = 0
     item_count = 0
-    #cart = request.session.get('cart', {})
+    cart = request.session.get('cart', {})
 
-    #for photo_id in cart.items():
-    #    product = get_object_or_404(Photo, pk=photo_id)
-    #    total += photo.price
-    #    item_count += 1
-    #    cart_items.append({
-    #        'photo_id': photo_id,
-    #        'photo': product,
-    #    })
+    # for photo_id, photo_id in cart.items():
+    #     photo = get_object_or_404(Photo, pk=photo_id)
+    #     total += photo.price
+    #     item_count += 1
+    #     cart_items.append({
+    #         'photo_id': photo_id,
+    #         'photo': photo,
+    #     })
 
     context = {
         'cart_items': cart_items,
