@@ -15,7 +15,8 @@ def add_to_cart(request, product_id):
     if product_id in list(cart.keys()):
         print('Item exists')
     else:
-        cart[product_id] =product_id
+        print(product_id)
+        # cart[product_id] = product_id
 
     request.session['cart'] = cart
     print(request.session['cart'])

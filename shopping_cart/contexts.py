@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from portfolio.models import Product
 # from portfolio.models import Photo
 
 def cart_contents(request):
@@ -8,14 +9,15 @@ def cart_contents(request):
     item_count = 0
     cart = request.session.get('cart', {})
 
-    # for photo_id, photo_id in cart.items():
-    #     photo = get_object_or_404(Photo, pk=photo_id)
-    #     total += photo.price
-    #     item_count += 1
-    #     cart_items.append({
-    #         'photo_id': photo_id,
-    #         'photo': photo,
-    #     })
+    for product_id in cart.items():
+        print('Hello',cart_items)
+        # product = get_object_or_404(Product, pk=product_id)
+        # total += product.price
+        # item_count += 1
+        cart_items.append({
+            'product_id': product_id,
+            # 'product': product,
+        })
 
     grand_total = total
 
