@@ -19,12 +19,6 @@ def portfolio(request):
             photos = photos.filter(label__name__in=labels)
             labels = Category.objects.filter(name__in=labels)
 
-
-        if 'q' in request.GET:
-            query = request.GET['q']
-            if not query:
-                messages.error(request, 'Not such information')
-                return redirect(reverse('portfolio'))
             
             queries = Q(label__icontains=query) | Q(location__icontains=query)
             photos = photos.filter(queries)
