@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -7,10 +7,14 @@ def cart(request):
     return render(request, 'shopping_cart/cart.html')
 
 
-def add_to_bag(request, item_id):
+def add_to_cart(request, photo_id):
     
-    quantity = int(request.POST.get('quantity'))
+    quantity = 1
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
-    cart[item_id]
+    cart[photo_id] = quantity
+
+    request.session['cart'] = cart
+    print(request.session['cart'])
+    return redirect(redirect_url)
