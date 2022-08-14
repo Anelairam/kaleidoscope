@@ -1,19 +1,19 @@
 <div class="col">
     <ul class="list-inline">
         <li class="list-inline-item">
-            <a href="{% url 'portfolio' %}">All</a>
+            <a href="{% url 'portfolio' %}?category=Urban,Landscape,Aerial,Food">All</a>
         </li>
         <li class="list-inline-item">
-            <a href="{% url 'portfolio' %}?label=Urban">Urban</a>
+            <a href="{% url 'portfolio' %}?category=Urban">Urban</a>
         </li>
         <li class="list-inline-item">
-            <a href="{% url 'portfolio' %}?label=Landscape">Landscape</a>
+            <a href="{% url 'portfolio' %}?category=Landscape">Landscape</a>
         </li>
         <li class="list-inline-item">
-            <a href="{% url 'portfolio' %}?label=Aerial">Aerial</a>
+            <a href="{% url 'portfolio' %}?category=Aerial">Aerial</a>
         </li>
         <li class="list-inline-item">
-            <a href="{% url 'portfolio' %}?label=Food">Food</a>
+            <a href="{% url 'portfolio' %}?category=Food">Food</a>
         </li>
     </ul>
 </div>

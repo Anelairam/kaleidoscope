@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.contrib import messages
-from django.db.models import Q
 from .models import Product, Category
 
 
@@ -9,23 +7,18 @@ from .models import Product, Category
 def portfolio(request):
     """The view returns the index page"""
     products = Product.objects.all()
-    query = None
-    labels = None
+    category = None
 
     if request.GET:
-        if 'label' in request.GET:
-            labels = request.GET['label'].split(',')
-            photos = photos.filter(label__name__in=labels)
-            labels = Category.objects.filter(name__in=labels)
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
 
-            
-            queries = Q(label__icontains=query) | Q(location__icontains=query)
-            photos = photos.filter(queries)
 
     context = {
         'products': products,
-        'search_item': query,
-        'current_label': labels,
+        'current_categories': categories,
     }
 
     return render(request, 'portfolio/portfolio.html', context)
