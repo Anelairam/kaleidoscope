@@ -8,15 +8,16 @@ def cart(request):
 
 
 def add_to_cart(request, product_id):
-    
+    """ Add a quantity of the specified product to the shopping bag """
+
+    quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    cart = request.session.get('cart', {})  
+    cart = request.session.get('cart', {})
 
     if product_id in list(cart.keys()):
-        print('Item exists')
+        cart[product_id] += quantity
     else:
-        print(product_id)
-        # cart[product_id] = product_id
+        cart[product_id] = quantity
 
     request.session['cart'] = cart
     print(request.session['cart'])

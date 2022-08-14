@@ -19,21 +19,56 @@ body{
     color: white;
 }
 
+.header-container {
+    padding-top: 58px;
+    background-color: #f8f9fa;
+}
+
+/* Styles for index */
 .index-base{
     background: url('/media/main2.jpg') no-repeat center;
     width: 50%;
     height: 1020px;
 }
 
-.header-container {
-    padding-top: 98px;
-}
-
-.page_heading{
-    padding-top: 150px;
-    color: blue;
-}
-
 .about-col {
-    color: white;
+   background-color:#f8f9fa;
+   color: black;
+   padding: 0 25%;
 }
+
+.contact-col {
+    color:#f8f9fa;
+ }
+
+ #contact a{
+    text-decoration: none;
+    color: #f8f9fa;
+ }
+
+ .ic{
+    margin-right: 15px;
+ }
+
+ /* Styles for portfolio */
+ .page_heading {
+    color:#f8f9fa;
+ }
+
+ hr {
+    border: 2px solid #f8f9fa;
+ }
+
+ .sorting_bar a{
+   color: #f8f9fa;
+   text-decoration: none;
+ }
+
+ .sorting_bar a:hover {
+    text-decoration: underline;
+  }
+
+ .sort_item {
+    padding-right: 15px;
+    border-right: 1px solid #f8f9fa;
+ }

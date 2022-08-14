@@ -8,6 +8,7 @@ def portfolio(request):
     """The view returns the index page"""
     products = Product.objects.all()
     category = None
+    categories = None
 
     if request.GET:
         if 'category' in request.GET:
