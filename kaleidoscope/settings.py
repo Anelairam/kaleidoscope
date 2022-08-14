@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'home',
     'portfolio',
     'eshop',
-    'shopping_cart'
+    'shopping_cart',
+    'checkout'
 ]
 
 MIDDLEWARE = [
@@ -86,6 +87,8 @@ TEMPLATES = [
         },
     },
 ]
+
+MESSAGES_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
