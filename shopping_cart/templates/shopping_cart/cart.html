@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <div class="container-fluid header-container">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container bag-container">
         <div class="row">
             <div class="col">
                 <h1>Shopping cart</h1>
@@ -18,7 +18,7 @@
         </div>
         <div class="row">
             <div class="col">
-                {% if bag_items %}
+                {% if cart_items %}
                     <div class="table-responsive rounded">
                         {{ cart_items }}
                     </div>

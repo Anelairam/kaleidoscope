@@ -76,3 +76,8 @@ body{
  .bag {
     background-color: #f8f9fa;
  }
+
+ .bag-container{
+   padding-top: 250px;
+   color: #f8f9fa;
+ }
