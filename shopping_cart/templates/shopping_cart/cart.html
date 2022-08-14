@@ -42,7 +42,7 @@
                                         <p class="my-0 text_color">${{ cart_item.product.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="update_qnt_form" action="" method="POST">
+                                        <form class="update_qnt_form" action="{% url 'adjust_cart' cart_item.product.id %}" method="POST">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -50,8 +50,8 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-qty text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ cart_item.product.id }}"><i class="fa-solid fa-xmark"></i></a>
+                                        <a class="update-qty text-info status_btn"><small>Update</small></a>
+                                        <a class="remove-item text-danger float-right status_btn" id="remove_{{ cart_item.product.id }}"><i class="fa-solid fa-xmark"></i></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0 text_color">${{ cart_item.product.price }}</p>
@@ -98,24 +98,24 @@
 
 
 {% block postloadjs %}
-<script type="text/javascript">
-    // update the qty on click
-    $('.update-qty').click(function(e){
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
+    <script type="text/javascript">
+        // update the qty on click
+        $('.update-qty').click(function(e){
+            var form = $(this).prev('.update_qnt_form');
+            form.submit();
+        })
 
-    // remove item on click
-    $('.remove-item').click(function(e){
-        var csrfToken = "{{ csrf_token }}";
-        var productId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${productId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
+        // remove item on click
+        $('.remove-item').click(function(e){
+            var csrfToken = "{{ csrf_token }}";
+            var productId = $(this).attr('id').split('remove_')[1];
+            var url = `/shopping_cart/remove/${productId}/`;
+            var data = {'csrfmiddlewaretoken': csrfToken};
 
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
-</script>
+            $.post(url, data)
+            .done(function() {
+                location.reload();
+            });
+        })
+    </script>
 {% endblock %}
