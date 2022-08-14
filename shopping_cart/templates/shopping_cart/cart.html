@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container bag-container">
+    <div class="container text_color">
         <div class="row">
             <div class="col">
                 <h1>Shopping cart</h1>
@@ -19,12 +19,71 @@
         <div class="row">
             <div class="col">
                 {% if cart_items %}
-                    <div class="table-responsive rounded">
-                        {{ cart_items }}
+                    <div class="table-responsive rounded text_color">
+                        <table class="table table-sm table-borderless">
+                            <thead class="text_color">
+                                <tr>
+                                    <th scope="col">Product Info</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+                            {% for cart_item in cart_items %}
+                                <tr class="tr_border">
+                                    <td class="p-3 w-25">
+                                        <img class="img-fluid rounded" src="">
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0 text_color"><strong>{{ cart_item.product.name }}</strong></p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0 text_color">${{ cart_item.product.price }}</p>
+                                    </td>
+                                    <td class="py-3 w-25">
+                                        <form class="update_qnt_form" action="" method="POST">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input class="form-control form-control-sm qty_input quantity-input-style" type="number" name="quantity" value="{{ cart_item.quantity}}" min="1" max="99" data-item_id="{{ cart_item.product.id }}" id="id_qty_{{ cart_item.product.id }}"> X
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <a class="update-qty text-info"><small>Update</small></a>
+                                        <a class="remove-item text-danger float-right" id="remove_{{ cart_item.product.id }}"><i class="fa-solid fa-xmark"></i></a>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0 text_color">${{ cart_item.product.price }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-5">
+                                    <h4 class="mt-4 text_color txt_right"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="txt_right">
+                                    <a href="{% url 'portfolio' %}" class="btn btn-outline-black rounded-0 btn-lg text_color">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <a href="" class="btn btn-white rounded-0 btn-lg text_color">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
-                    <a href="#" class="btn btn-outline-black rounded-0 btn-lg">
+                    <a href="{% url 'portfolio' %}" class="btn btn-outline-white rounded-0 btn-lg">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
@@ -34,4 +93,29 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+
+
+{% block postloadjs %}
+<script type="text/javascript">
+    // update the qty on click
+    $('.update-qty').click(function(e){
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // remove item on click
+    $('.remove-item').click(function(e){
+        var csrfToken = "{{ csrf_token }}";
+        var productId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${productId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}

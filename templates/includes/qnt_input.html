@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    // // Increase the quantity input
+    // $('.increment-qty').click(function(e){
+    //     e.preventDefault();
+    //     var closerInput = (this).closest('.input-group').find('.qty_input')[0];
+    //     var currentInput = parseInt($(closerInput).val());
+    //     $(closerInput).val(currentInput + 1);
+    // })
+
+    // // Decrease the quantity input
+    // $('.decrement-qty').click(function(e){
+    //     e.preventDefault();
+    //     var closerInput = (this).closest('.input-group').find('.qty_input')[0];
+    //     var currentInput = parseInt($(closerInput).val());
+    //     $(closerInput).val(currentInput - 1);
+    // })
+
+    $('.increment-qty').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue + 1);
+       var itemId = $(this).data('product_id');
+       handleEnableDisable(itemId);
+    });
+
+    // Decrement quantity
+    $('.decrement-qty').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue - 1);
+       var itemId = $(this).data('product_id');
+       handleEnableDisable(itemId);
+    });
+</script>

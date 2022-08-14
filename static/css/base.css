@@ -73,6 +73,7 @@ body{
     border-right: 1px solid #f8f9fa;
  }
 
+ /* Styles for shopping cart template */
  .bag {
     background-color: #f8f9fa;
  }
@@ -80,4 +81,20 @@ body{
  .bag-container{
    padding-top: 250px;
    color: #f8f9fa;
+ }
+
+ .text_color{
+   color: #f8f9fa !important;
+ }
+
+ .tr_border{
+   border-bottom: 1px solid #f8f9fa;
+ }
+
+ .txt_right{
+   text-align: right !important;
+ }
+
+ .update_qnt_form{
+   width: 60px;
  }
