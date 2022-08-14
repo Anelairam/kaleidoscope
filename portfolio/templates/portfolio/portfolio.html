@@ -11,6 +11,7 @@
 
 {% block content %}
     <div class="container-fluid">
+        <!-- Page heading row -->
         <div class="row">
             <div class="col">
                 <h1 class="page_heading text-center">
@@ -22,9 +23,9 @@
         <div class="row">
             {% include 'includes/sorting-n-searching.html' %}
         </div>
+        <!-- Page main content row -->
         <div class="row">
-            <div class="photos-container">
-                <div class="row"></div>
+            <div class=" col photos-container">
                 <div class="row">
                     {% for product in products %}
                         <div class="card" style="width: 18rem;">
