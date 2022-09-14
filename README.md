@@ -84,3 +84,10 @@ The project's theme is a photographer's website, where the photographer as the o
 
 ### Acknowledgements
 ---
+* Code Institute for project guidance, project walkthrough and coding & learning materials.
+* My mentor for support and encouragement throught the course.
+* [Font Awesome](#https://fontawesome.com/) for the icon libraries.
+* Slack community
+
+
+Thank you!
