@@ -80,6 +80,15 @@ body{
     border-right: 1px solid #f8f9fa;
  }
 
+ .photos-container .row{
+   justify-content: space-around;
+ }
+
+ .img_card_preview {
+   width: 100%;
+   height: 50%;
+ }
+
  /* Styles for shopping cart template */
  .bag {
     background-color: #f8f9fa;

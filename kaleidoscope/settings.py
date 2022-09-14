@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-anelairam-kaleidoscope-1ednhrzx19y.ws-eu60.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-anelairam-kaleidoscope-1ednhrzx19y.ws-eu64.gitpod.io']
 
 ALLOWED_HOSTS = ['ci5.herokuapp.com', 'localhost']
 
