@@ -32,7 +32,7 @@
                     {% for product in products %}
                         {% if product.price != NULL %}
                             <div class="card" style="width: 18rem;">
-                                <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                                <img class="img_card_preview" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ product.name }}">
                                 <div class="card-body">
                                     <a href="{% url 'product_detail' product.id %}"><h5 class="card-title">{{ product.name }}</h5></a>
                                     <p class="card-text"><i class="fas fa-tag"></i>{{ product.category }}</p>
