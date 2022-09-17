@@ -25,11 +25,11 @@
         </div>
         <!-- Page main content row -->
         <div class="row">
-            <div class="col photos-container">
+            <div class="col-6 mx-auto photos-container">
                 <div class="row">
                     {% for product in products %}
                         <div class="card" style="width: 18rem;">
-                            <div class="card-body">
+                            <div class="card-body col">
                                 <a href="{% url 'product_detail' product.id %}">
                                     <img class="img_card_preview" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ product.name }}">
                                 </a>
@@ -39,12 +39,18 @@
                                 {% if product.price != NULL %}
                                     {% if request.user.is_authenticated %} 
                                         <p class="card-text"><i class="fa-sharp fa-solid fa-tag"></i>{{ product.price }}</p>
-                                        <a href="#" class="btn btn-primary">Add</a>
+                                        <div class="row btn_area">
+                                            <a href="#" class="btn btn-primary">Add</a>
+                                        </div>
                                     {% else %}
-                                        <a href="#" class="btn btn-primary">Shop</a>
+                                        <div class="row btn_area">
+                                            <a href="#" class="btn btn-primary">Shop</a>
+                                        </div>
                                     {% endif %}
                                 {% else %}
-                                    <a href="{% url 'product_detail' photo.id %}" class="btn btn-primary">Show more</a>
+                                    <div class="row btn_area py-1">
+                                        <a href="{% url 'product_detail' photo.id %}" class="btn btn-primary">Show more</a>
+                                    </div>
                                 {% endif %}
                             </div>
                         </div>

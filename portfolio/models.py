@@ -20,13 +20,13 @@ class Type(models.Model):
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=25)
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     type = models.ForeignKey('Type', null=True, on_delete=models.SET_NULL)
-    location = models.CharField(max_length=100, null=True, blank=True)
+    location = models.CharField(max_length=25, null=True, blank=True)
     size = models.CharField(max_length=200, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    description = models.CharField(max_length=100, null=True, blank=True)
+    description = models.CharField(max_length=200, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
