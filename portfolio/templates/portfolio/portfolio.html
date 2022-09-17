@@ -29,28 +29,26 @@
                 <div class="row">
                     {% for product in products %}
                         <div class="card" style="width: 18rem;">
-                            <div class="card-body col">
+                            <div class="card-body">
                                 <a href="{% url 'product_detail' product.id %}">
                                     <img class="img_card_preview" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ product.name }}">
                                 </a>
                                 <a href="{% url 'product_detail' product.id %}"><h5 class="card-title">{{ product.name }}</h5></a>
-                                <p class="card-text"><i class="fas fa-tag"></i>{{ product.category }}</p>
-                                <p class="card-text"><i class="fas fa-location-dot"></i>{{ product.location }}</p>
+                                <p class="card-text"><i class="fas fa-tag"></i> {{ product.category }}</p>
+                                {% if product.location != NULL %}
+                                    <p class="card-text"><i class="fas fa-location-dot"></i> {{ product.location }}</p>
+                                {% else %}
+                                    <p class="card-text"><i class="fas fa-location-dot"></i> N/A</p>
+                                {% endif %}
                                 {% if product.price != NULL %}
                                     {% if request.user.is_authenticated %} 
-                                        <p class="card-text"><i class="fa-sharp fa-solid fa-tag"></i>{{ product.price }}</p>
-                                        <div class="row btn_area">
-                                            <a href="#" class="btn btn-primary">Add</a>
-                                        </div>
+                                        <p class="card-text"><i class="fa-sharp fa-solid fa-tag"></i> {{ product.price }}</p>
+                                        <a href="#" class="btn btn-primary">Add</a>
                                     {% else %}
-                                        <div class="row btn_area">
-                                            <a href="#" class="btn btn-primary">Shop</a>
-                                        </div>
+                                        <a href="#" class="btn btn-primary">Shop</a>
                                     {% endif %}
                                 {% else %}
-                                    <div class="row btn_area py-1">
-                                        <a href="{% url 'product_detail' photo.id %}" class="btn btn-primary">Show more</a>
-                                    </div>
+                                    <a href="{% url 'product_detail' photo.id %}" class="btn btn-primary">Show more</a>
                                 {% endif %}
                             </div>
                         </div>
