@@ -35,7 +35,7 @@
                             {% for cart_item in cart_items %}
                                 <tr class="tr_border">
                                     <td class="p-3 w-25">
-                                        <img class="img-fluid rounded" src="">
+                                        <img class="img_thumbnail" src="{{ MEDIA_URL }}{{product.image}}">
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0 text_color"><strong>{{ cart_item.product.name }}</strong></p>
@@ -52,7 +52,7 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-qty text-info status_btn"><small>Update</small></a>
+                                        <a class="update-qty text-info status_btn"><small><i class="fa-solid fa-arrows-rotate"></i></small></a>
                                         <a class="remove-item text-danger float-right status_btn" id="remove_{{ cart_item.product.id }}"><i class="fa-solid fa-xmark"></i></a>
                                     </td>
                                     <td class="py-3">

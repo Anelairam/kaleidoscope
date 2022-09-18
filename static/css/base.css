@@ -131,3 +131,8 @@ footer .container-fluid{
  .status_btn :hover{
    cursor: pointer;
  }
+
+ .img_thumbnail{
+  width: 50px;
+  height: 50px;
+ }

@@ -71,7 +71,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'kaleidoscope.urls'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5.2'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
