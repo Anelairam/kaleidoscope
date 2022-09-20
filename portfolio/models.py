@@ -1,4 +1,5 @@
 from django.db import models
+from durationfield.db.models.fields.duration import DurationField
 
 # Create your models here.
 class Category(models.Model):
@@ -29,6 +30,29 @@ class Product(models.Model):
     description = models.CharField(max_length=200, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
+
+    def __str__(self):
+        return self.name
+
+
+class Tutorial(models.Model):
+    name = models.CharField(max_length=25)
+    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    type = models.ForeignKey('Type', null=True, on_delete=models.SET_NULL)
+    price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    description = models.CharField(max_length=200, null=True, blank=True)
+    duration = models.DurationField()
+    
+    def __str__(self):
+        return self.name
+
+
+class Tour(models.Model):
+    name = models.CharField(max_length=25)
+    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    type = models.ForeignKey('Type', null=True, on_delete=models.SET_NULL)
+    price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    description = models.CharField(max_length=200, null=True, blank=True)    
 
     def __str__(self):
         return self.name

@@ -10,28 +10,27 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid cart">
-        <div class="row">
-            <div class="col-4">
-                <h1 class="page_heading_dark text-center">
-                    PHOTO DETAIL 
-                    {{ product.name }}
-                </h1>
-                <hr>
-            </div>
-        </div>
-        <div class="row justify-content-around">
-            <div class="col">
+    <div class="container-fluid cart product_detail-container">
+        <div class="row justify-content-between">
+            <div class="col-4 mx-auto">
                 <div class="image-container">
                         <a href="{{ product.image.url }}" target="_blank">
                             <img class="img-fluid img-elm" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ photo.name }}">
                         </a>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-4 mx-auto mt-5">
                 <p class="mb-0">{{ product.name }}</p>
-                <p class="mb-0">{{ product.size }}</p>
-                <p class="mb-0">{{ product.location }}</p>
+                {% if product.size != NULL %}
+                    <p class="card-text"><i class="fas fa-location-dot"></i> {{ product.size }}</p>
+                {% else %}
+                    <p class="card-text"><i class="fas fa-location-dot"></i> N/A</p>
+                {% endif %}
+                {% if product.location != NULL %}
+                    <p class="card-text"><i class="fas fa-location-dot"></i> {{ product.location }}</p>
+                {% else %}
+                    <p class="card-text"><i class="fas fa-location-dot"></i> N/A</p>
+                {% endif %}
                 <p class="mb-0">{{ product.category }}</p>
                 {% if product.price != NULL %}
                     <p class="mb-0">{{ product.price }}</p>
