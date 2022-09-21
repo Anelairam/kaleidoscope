@@ -130,6 +130,11 @@ footer .container-fluid{
  /* Styles for product_detail template */
 
 
+  /* Styles for calendar template */
+.calendar_colour{
+  color: blue;
+}
+
 
  /* Styles for shopping cart template */
  .cart {
