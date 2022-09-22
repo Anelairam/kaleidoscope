@@ -5,9 +5,6 @@ from .models import Event
 class EventAdmin(admin.ModelAdmin):
     list_display = (
         'title',
-        'description',
-        'starting_time',
-        'ending_time',
     )
 
 
