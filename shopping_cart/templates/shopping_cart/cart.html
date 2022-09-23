@@ -35,7 +35,7 @@
                             {% for cart_item in cart_items %}
                                 <tr class="tr_border">
                                     <td class="p-3 w-25">
-                                        <img class="img_thumbnail w-100" src="{{ MEDIA_URL }}{{product.image}}">
+                                        <img class="img_thumbnail" src="{{ MEDIA_URL }}{{product.image}}">
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0 text_color"><strong>{{ cart_item.product.name }}</strong></p>
