@@ -12,11 +12,15 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col align-self-center mx-auto"><h1>Events</h1>
+            <div class="col text-center"><h1>Events</h1>
                 {% for event in events %}
+                    
                   <div class="row">
-                    <div class="col align-self-center">
+                    <div class="col">
                       <h2>{{ event.day|date:'l dS M Y' }} at {{ event.starting_at|date:'H:i' }}</h2>
+                      <p>{{ event.day }}</p>
+                      <p>{{ current_month }}</p>
+                      <p>{{ today }}</p>
                     </div>
                   </div>
               {% endfor %}
