@@ -31,7 +31,6 @@ class Product(models.Model):
 
 
     def __str__(self):
-<<<<<<< HEAD
         return self.name
 
 
@@ -45,6 +44,3 @@ class Tutorial(models.Model):
 
     def __str__(self):
         return self.name
-=======
-        return self.name
->>>>>>> parent of aaf93d4 (Create Tutorial dna tour models)
