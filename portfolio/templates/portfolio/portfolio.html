@@ -25,7 +25,7 @@
         </div>
         <!-- Page main content row -->
         <div class="row">
-            <div class="col col-xl-7 mx-auto photos-container">
+            <div class="col-6 mx-auto photos-container">
                 <div class="row">
                     {% for product in products %}
                         <div class="card" style="width: 18rem;">
@@ -33,14 +33,23 @@
                                 <a href="{% url 'product_detail' product.id %}">
                                     <img class="img_card_preview" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ product.name }}">
                                 </a>
-                                <a href="{% url 'product_detail' product.id %}"  class="card-title"><h5>{{ product.name }}</h5></a>
+                                <a href="{% url 'product_detail' product.id %}"><h5 class="card-title">{{ product.name }}</h5></a>
                                 <p class="card-text"><i class="fas fa-tag"></i> {{ product.category }}</p>
                                 {% if product.location != NULL %}
                                     <p class="card-text"><i class="fas fa-location-dot"></i> {{ product.location }}</p>
                                 {% else %}
                                     <p class="card-text"><i class="fas fa-location-dot"></i> N/A</p>
                                 {% endif %}
-                                <a href="{% url 'product_detail' product.id %}" class="btn btn-dark sqr-edge">Show More</a>
+                                {% if product.price != NULL %}
+                                    {% if request.user.is_authenticated %} 
+                                        <p class="card-text"><i class="fa-sharp fa-solid fa-tag"></i> {{ product.price }}</p>
+                                        <a href="#" class="btn btn-primary">Add</a>
+                                    {% else %}
+                                        <a href="#" class="btn btn-primary">Shop</a>
+                                    {% endif %}
+                                {% else %}
+                                    <a href="{% url 'product_detail' photo.id %}" class="btn btn-primary">Show more</a>
+                                {% endif %}
                             </div>
                         </div>
                     {% endfor %}

@@ -19,13 +19,14 @@
 {% block content %}
     <div class="container-fluid checkout_container">
         <div class="row">
-            <div class="col text-center">
+            <div class="col">
                 <h1>Checkout</h1>
             </div>
         </div>
+
         <div class="row">
-            <div class="col-12 col-lg-6 order-lg-last mb-5 w-10">
-                <p class="text-muted">Order Summary ({{ product.count }})</p>
+            <div class="col-12 col-lg-6 order-lg-last mb-5">
+                <p class="text-muted">Order Summary ({{ product_count }})</p>
                 <div class="row">
                     <div class="col-7 offset-2">
                         <p class="mb-1 mt-0 small text-muted">Item</p>
@@ -66,8 +67,8 @@
                 <p class="text-muted">Please fill out the form below for your order submition</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
-                    <fieldset class="form-field px-3 mb-5">
-                        <legend class="fieldset-label small text-white px-2 w-35">Details</legend>
+                    <fieldset class="rounded px-3 mb-5">
+                        <legend class="fieldset-label small text-white px-2 w-auto">Details</legend>
                         {{ order_form.full_name |as_crispy_field }}
                         {{ order_form.email |as_crispy_field }}
                     </fieldset>
