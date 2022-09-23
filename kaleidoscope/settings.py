@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'home',
     'portfolio',
     'eshop',
-    'cal',
+    # 'cal',
     'shopping_cart',
     'checkout',
 
