@@ -1,4 +1,4 @@
-from portfolio.models import Type
+from portfolio.models import Category, Type
 from django.db import models
 
 
@@ -15,6 +15,7 @@ class Difficulty(models.Model):
 
 class Event(models.Model):
     title = models.CharField(max_length=25)
+    category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
     day = models.DateField()
     type = models.ForeignKey(Type, null=True, on_delete=models.SET_NULL)
     difficulty = models.ForeignKey('Difficulty', null=True, on_delete=models.SET_NULL)
