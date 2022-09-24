@@ -8,10 +8,9 @@ def events(request):
     """The view returns the index page"""
     events = Event.objects.all()
     today = datetime.now()
-    current_month = today.month
 
-    context= {
+    context = {
         'events': events,
-        'current_month': current_month,
+        'today': today,
     }
     return render(request, 'events/events.html', context)
