@@ -27,21 +27,21 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col text-center"><h1>Upcoming Events</h1>
                 {% for event in events %}
                     {% if event.day|date:'M' != today|date:'M' %}
-                        <!-- {% if event.day|date:'Y' >= today|date:'Y' %} -->
+                        {% if event.day|date:'Y' >= today|date:'Y' %}
                             <p>congratulations}</p>
-                            <!-- <div class="row">
+                            <div class="row">
                                 <div class="col">
                                 <h2>{{ event.day|date:'l dS M Y' }} at {{ event.starting_at|date:'H:i' }}</h2>
                                 </div>
-                            </div> -->
-                        <!-- {% endif %} -->
+                            </div>
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
             </div>
-        </div>
+        </div> -->
     </div>
 {% endblock %}
