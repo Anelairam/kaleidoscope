@@ -78,31 +78,59 @@ The website features a Homepage with a main navbar to navigate the main sections
 
 #### Images
 ---
+* Allmost all images that are in use for the website are from [Pexels](#https://pexels.com/) .
 
 #### Colours
 ---
 
 ### Database View
 ---
+In the development of Kaleidoscope, I have used SQLite3 database as part of Django framework and Heroku PostGres to handle the database for the production version of the website.
+
+All photos, tutorials and events have been manually created by myself. Django’s authentication system and Django Allauth are also integrated sets of Django and helped manage authentication, registration and account management. The schema below has been created with dbdiagram.io:
+
 
 ### Data Models
 ---
 
 ### Technologies Used
 ---
+* HTML
+* CSS
+* Python
+* JavaScript
+* Django and Django Allauth
+* Bootstrap
+* Font Awesome
+* JQuery
+* Google Fonts
+* Stripe
+* GitHub
+* GitPod
+* Heroku
+* AWS
 
 ### Testing & Validation
 ---
+* A full manual testing file can be found here.
+* For python code validation I have been using pep8 online:
+  * Lines left too long just when breaking them would have compromised the code integrity.
+* For HTML validation I have used validatorW3
+* For CSS validation I have used jigsaw.W3
+* For responsiveness testing I have used Google DevTools
 
 ### Deployment
 ---
+Kaleidoscope has been created on Gitpod, with commits pushed directly to the GitHub repository. The project has been deployed to Heroku, which was synchronized to GitHub to update the live site. The static files are stored in Amazon AWS and the payment infrastructure is managed by Stripe's software and APIs.
 
 ### Acknowledgements
 ---
 * Code Institute for project guidance, project walkthrough and coding & learning materials.
 * My mentor for support and encouragement throught the course.
 * [Font Awesome](#https://fontawesome.com/) for the icon libraries.
+* [Pexels](#https://pexels.com/) for the photos.
 * Slack community
+* Tutor Support
 
 
 Thank you!
