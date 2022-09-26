@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from portfolio.models import Product
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 from .models import Tutorial
 from .forms import TutorialForm
 
@@ -37,8 +37,11 @@ def tutorial_detail(request, product_id):
 
     return render(request, 'eshop/tutorial_detail.html', context)
 
-
+@login_required
 def add_tutorial(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = TutorialForm(request.POST, request.FILES)
@@ -57,8 +60,12 @@ def add_tutorial(request):
 
     return render(request, template, context)
 
-
+@login_required
 def edit_tutorial(request, tutorial_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     tutorial = get_object_or_404(Tutorial, pk=tutorial_id)
     if request.method == 'POST':
         form = TutorialForm(request.POST, request.FILES, instance=tutorial)
@@ -79,8 +86,12 @@ def edit_tutorial(request, tutorial_id):
     }
     return render(request, template, context)
 
-
+@login_required
 def delete_tutorial(request, tutorial_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
     tutorial = get_object_or_404(Tutorial, pk=tutorial_id)
     tutorial.delete()
     messages.success(request, 'Tutorial deleted')

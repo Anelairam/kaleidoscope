@@ -73,6 +73,11 @@ footer .container-fluid{
     margin-right: 15px;
  }
 
+ .modal-content {
+  border-radius: 0% !important;
+  margin-top: 50px;
+ }
+
  /* Styles for portfolio */
  .page_heading {
     color:#2b2b29;
