@@ -45,15 +45,30 @@ The project's theme is a photographer's website, where the photographer as the o
 
 ### Strategy Plane
 ---
+Kaleidoscope is a photographer's online presense which provides the to the customer a great variety of photographs, tutorials and events. The customer can look around and take inspiration of the photographer's work, have a look to the available tutorials and check any new events that the photographer organises. 
+The website is clean and aims to reach a vast target audience. Its simple design makes the navigation intuitive and easy, all the materials nicely presented to clean background, giving the business a higher chance that the customer will feel comfortable and stay on the website to navigate further.
 
 ### Scoop Plane
 ---
+The website main goal is to make the Visiting User interested into purchasing photos, tutorials and joining photography events. The Users have to be able to register easily and manage their account immediately. The website must be responsive for all devices and easy to navigate for everyone.
 
 #### User Stories
 ---
 
 ### Skeleton Plane
 ---
+The website features a Homepage with a main navbar to navigate the main sections of the website: Home, Portfolio, Eshop, Account.
+
+* In the Homepage there are general information regarding the photographer and his work.
+* The Portfolio page displays all the pictures that the phtographer wants to show to his potential customers and followers his work regardless if they are for sale or not.
+* The Portfolio page has a dedicated navigation/filtering bar where the visitor can filter the photos according to preference.
+* The Eshop consists of three subpages the Photos, Tutorials and Events
+   * In the Photos page, the customers can see all the photos that are for sale, the element that differenciate them from the portfolio is the price factor.
+     * The Photos page has a dedicated navigation/filtering bar where the visitor can filter the photos according to preference.
+   * In the Tutorials page, the customers can see all the available tutorials for sale.
+   * In the Events page, the customers can see the upcoming events and joing them.
+* Each photo and tutorial has its own page with a more detailed description and purchase option.
+* The User will be able to Register or Login to the website anytime, thanks to the Account icon always displayed on the page header.
 
 ### Wireframes
 ---
@@ -63,31 +78,59 @@ The project's theme is a photographer's website, where the photographer as the o
 
 #### Images
 ---
+* Allmost all images that are in use for the website are from [Pexels](#https://pexels.com/) .
 
 #### Colours
 ---
 
 ### Database View
 ---
+In the development of Kaleidoscope, I have used SQLite3 database as part of Django framework and Heroku PostGres to handle the database for the production version of the website.
+
+All photos, tutorials and events have been manually created by myself. Django’s authentication system and Django Allauth are also integrated sets of Django and helped manage authentication, registration and account management. The schema below has been created with dbdiagram.io:
+
 
 ### Data Models
 ---
 
 ### Technologies Used
 ---
+* HTML
+* CSS
+* Python
+* JavaScript
+* Django and Django Allauth
+* Bootstrap
+* Font Awesome
+* JQuery
+* Google Fonts
+* Stripe
+* GitHub
+* GitPod
+* Heroku
+* AWS
 
 ### Testing & Validation
 ---
+* A full manual testing file can be found here.
+* For python code validation I have been using pep8 online:
+  * Lines left too long just when breaking them would have compromised the code integrity.
+* For HTML validation I have used validatorW3
+* For CSS validation I have used jigsaw.W3
+* For responsiveness testing I have used Google DevTools
 
 ### Deployment
 ---
+Kaleidoscope has been created on Gitpod, with commits pushed directly to the GitHub repository. The project has been deployed to Heroku, which was synchronized to GitHub to update the live site. The static files are stored in Amazon AWS and the payment infrastructure is managed by Stripe's software and APIs.
 
 ### Acknowledgements
 ---
 * Code Institute for project guidance, project walkthrough and coding & learning materials.
 * My mentor for support and encouragement throught the course.
 * [Font Awesome](#https://fontawesome.com/) for the icon libraries.
+* [Pexels](#https://pexels.com/) for the photos.
 * Slack community
+* Tutor Support
 
 
 Thank you!
