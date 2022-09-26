@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_tags %}
+{% load crispy_forms_tags %}
+
+
+{% block page_header %}
+    <div class="container-fluid header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid checkout_container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h2>Product Management</h2>
+                <h5>Add a tutorial</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="{% url 'add_tutorial' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right">
+                        <a class="btn btn-outline-dark rounded-0" href="{% url 'portfolio'%}">Cancel</a>
+                        <button class="btn btn-dark rounded-0" type="submit">Add Tutorial</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
