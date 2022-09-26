@@ -32,7 +32,11 @@
                         <div class="card" style="width: 18rem;">
                             <div class="card-body text-center">
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="img_card_preview" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ product.name }}">
+                                    {% if product.image %}
+                                        <img class="img_card_preview" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ product.name }}">
+                                    {% else %}
+                                        <img class="img_card_preview" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+                                    {% endif %}
                                 </a>
                                 <a href="{% url 'product_detail' product.id %}"><h5 class="card-title">{{ product.name }}</h5></a>
                                 <p class="card-text"><i class="fas fa-tag"></i> {{ product.category }}</p>

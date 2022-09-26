@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container-fluid header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center"><h1>Welcome to Product Management</h1>
+                <p>Congrats</p>
+                <a href="{% url 'add_product' %}">Add a New Photo</a>
+                <a href="">Add a Tutorial</a>
+                <a href="">Schedule a New Event</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -73,8 +73,11 @@
                   <i class="fas fa-user fa-lg"></i>
                 </a>
                 <ul class="dropdown-menu bg-light">
-                  {% if request.user.is_authenticated %}                                
-                    <li><a href="" class="dropdown-item">My Profile</a></li>
+                  {% if request.user.is_authenticated %}   
+                    {% if request.user.is_superuser %}
+                      <li><a href="{% url 'product_management' %}" class="dropdown-item">Product Management</a></li>
+                    {% endif %}                             
+                    <!-- <li><a href="" class="dropdown-item">My Profile</a></li> -->
                     <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
                   {% else %}
                     <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>

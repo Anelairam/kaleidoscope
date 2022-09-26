@@ -56,3 +56,7 @@ def add_product(request):
     }
 
     return render(request, template, context)
+
+
+def productmng(request):
+    return render(request, 'portfolio/product_management.html')
