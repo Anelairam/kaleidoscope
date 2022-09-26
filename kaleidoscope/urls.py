@@ -30,4 +30,4 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-handler404="home.views.handler_not_found"
+handler404 = "home.views.handler_not_found"
