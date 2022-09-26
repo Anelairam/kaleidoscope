@@ -165,8 +165,8 @@ footer .container-fluid{
  }
 
  .img_thumbnail{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
  }
 
 /* Styles for checkout template */
@@ -216,9 +216,4 @@ footer .container-fluid{
   .edit_add_form{
     width: 80% !important;
   }
-
-  /* .content_row{
-    width: 80% !important;
-    margin: 0 auto;
-  } */
 }

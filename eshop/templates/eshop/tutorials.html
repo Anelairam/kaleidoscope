@@ -37,10 +37,10 @@
                                         <a href="{% url 'edit_tutorial' tutorial.id %}"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                         <a href="{% url 'delete_tutorial' tutorial.id %}"><i class="fa-sharp fa-solid fa-trash"></i></a>
                                     {% endif %}
-                                <h4>{{ tutorial.category }}</h4>
-                                <p>{{ tutorial.type }}</p>
-                                <p>{{ tutorial.difficulty }}</p>
-                                <p>{{ tutorial.price }}</p>
+                                <h4><i class="fas fa-tag"></i> {{ tutorial.category }}</h4>
+                                <p><i class="fa-sharp fa-solid fa-font-awesome"></i> {{ tutorial.type }}</p>
+                                <p><i class="fa-solid fa-stairs"></i> {{ tutorial.difficulty }}</p>
+                                <p><i class="fa-sharp fa-solid fa-tag"></i> {{ tutorial.price }}</p>
                                 <p>{{ tutorial.description }}</p>
                             </div>
                         </div>
@@ -54,6 +54,11 @@
                     {% endif %}
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center info-col">
+            <p>In order to enroll to any of our tutorials, please contact us via email!</p>
         </div>
     </div>
 </div>

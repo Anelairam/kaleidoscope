@@ -19,7 +19,7 @@
                         </a>
                 </div>
             </div>
-            <div class="col-4 my-auto">
+            <div class="col col-md-4 my-auto">
                 <h5 class="mb-0">{{ product.name }}</h5>
                 {% if request.user.is_superuser %}
                     <a href="{% url 'edit_product' product.id %}"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
