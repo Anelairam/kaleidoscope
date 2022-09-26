@@ -198,3 +198,27 @@ footer .container-fluid{
 .page_heading a{
   color: #f8f9fa;
 }
+
+/* Styles for events */
+.event-img {
+  width: 250px;
+  height: 250px;
+}
+
+.info-col{
+  background-color: #2b2b29;
+  color: #f8f9fa;
+  margin-top: 5px;
+}
+
+/* Media queries css */
+@media (max-width: 1000px) {
+  .edit_add_form{
+    width: 80% !important;
+  }
+
+  /* .content_row{
+    width: 80% !important;
+    margin: 0 auto;
+  } */
+}

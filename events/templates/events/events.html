@@ -12,43 +12,47 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center"><h1>Events</h1>
-                {% for event in events %}
-                    {% if event.day|date:'M' == today|date:'M' %}
-                        <!-- {% if event.day > today.day %}
-                            <p> Coming up!! </p>
-                        {% endif %} -->
-                        <div class="row">
-                            <div class="col">
-                                <!-- {% if event.category == 'Landscape' %}
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}landscape.jpg" alt="">
-                                {% elif event.category == 'Urban' %}
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}urban.jpg" alt="">
-                                {% elif event.category == 'Aerial' %}
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}aerial.jpg" alt="">
-                                {% else %}
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}food.jpg" alt="">
-                                {% endif %} -->
-                                {% if event.category == "Urban" %}
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}urban.jpg" alt="">
-                                {% else %}
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}food.jpg" alt="">
-                                {% endif %}
+            <div class="col text-center">
+                <h1 class="page_heading text-center mt-2">
+                    Events
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {% if events %}
+                    {% for event in events %}
+                        <div class="row justify-content-center">
+                            <div class="col col-md-4">
+                                <img class="event-img" src="{{ MEDIA_URL }}events.jpg" alt="">
                             </div>
-                            <div class="col">
-                                <p> {{ event.category }}</p>
-                                <h2>{{ event.day|date:'l dS M Y' }} at {{ event.starting_at|date:'H:i' }}</h2>
+                            <div class="col col-md-4 text-left">
+                                <h3>{{ event.title }}</h3>
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'edit_event' event.id %}"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                        <a href="{% url 'delete_event' event.id %}"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                                    {% endif %}
+                                <h4>{{ event.day|date:'l dS M Y' }} at {{ event.starting_at|date:'H:i' }}</h4>
+                                <p>{{ event.type }}</p>
+                                <p>{{ event.difficulty }}</p>
+                                <p><strong>Starting at: </strong>{{ event.starting_at }} | <strong>Ending at: </strong>{{ event.ending_at }}</p>
+                                <p>{{ event.description }}</p>
                             </div>
                         </div>
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
+                {% else %}
+                    <div class="row">
+                        <div class="col text-center">
+                            <h2> No events available yet </h2>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center info-col">
+                <p>In order to join any of our events, please contact us via email!</p>
             </div>
         </div>
     </div>
 {% endblock %}
-
-<!-- Edit and delete functionality -->
-<!-- {% if request.user.is_superuser %}
-    <a href="{% url 'edit_event' event.id %}"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-    <a href="{% url 'delete_event' event.id %}"><i class="fa-sharp fa-solid fa-trash"></i></a>
-{% endif %} -->

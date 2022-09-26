@@ -21,35 +21,29 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6 mx-auto photos-container">
+            <div class="col">
                 <div class="row">
                     {% if tutorials %}
                         {% for tutorial in tutorials %}
-                            <div class="card" style="width: 18rem;">
-                                <!-- <div class="card-body text-center">
-                                    <a href="{% url 'product_detail' product.id %}">
-                                        {% if product.image %}
-                                            <img class="img_card_preview" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ product.name }}">
-                                        {% else %}
-                                            <img class="img_card_preview" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
-                                        {% endif %}
-                                    </a>
-                                    <a href="{% url 'product_detail' product.id %}"><h5 class="card-title">{{ product.name }}</h5></a>
-                                    <p class="card-text"><i class="fas fa-tag"></i> {{ product.category }}</p>
-                                    {% if product.location != NULL %}
-                                        <p class="card-text"><i class="fas fa-location-dot"></i> {{ product.location }}</p>
-                                    {% else %}
-                                        <p class="card-text"><i class="fas fa-location-dot"></i> N/A</p>
-                                    {% endif %}
-                                    <p class="card-text"><i class="fa-sharp fa-solid fa-tag"></i> {{ product.price }} <i class="fa-thin fa-dollar-sign"></i></p>
-                                    {% if request.user.is_authenticated %}
-                                        <a href="{% url 'product_detail' product.id %}" class="btn btn-dark rounded-0">Shop</a> 
-                                        <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-dark rounded-0">Show more</a>
-                                    {% else %}                                            
-                                        <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-dark rounded-0">Show more</a>
-                                    {% endif %}
-                                </div> -->
+                        <div class="row justify-content-center mx-auto">
+                            <div class="col col-md-4 ">
+                                <video width="320" height="240" controls>
+                                    <source src="{{ MEDIA_URL }}{{tutorial.file}}" type="video/mp4">
+                                </video>
                             </div>
+                            <div class="col col-md-4">
+                                <h3>{{ tutorial.name }}</h3>
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'edit_tutorial' tutorial.id %}"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                        <a href="{% url 'delete_tutorial' tutorial.id %}"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                                    {% endif %}
+                                <h4>{{ tutorial.category }}</h4>
+                                <p>{{ tutorial.type }}</p>
+                                <p>{{ tutorial.difficulty }}</p>
+                                <p>{{ tutorial.price }}</p>
+                                <p>{{ tutorial.description }}</p>
+                            </div>
+                        </div>
                         {% endfor %}
                     {% else %}
                             <div class="row">
@@ -64,11 +58,3 @@
     </div>
 </div>
 {% endblock %}
-
-
-
-<!-- Edit and delete functionality -->
-<!-- {% if request.user.is_superuser %}
-    <a href="{% url 'edit_tutorial' tutorial.id %}"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-    <a href="{% url 'delete_tutorial' tutorial.id %}"><i class="fa-sharp fa-solid fa-trash"></i></a>
-{% endif %} -->

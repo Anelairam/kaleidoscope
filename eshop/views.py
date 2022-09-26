@@ -27,16 +27,6 @@ def tutorials(request):
     return render(request, 'eshop/tutorials.html', context)
 
 
-def tutorial_detail(request, product_id):
-    """The view returns the index page"""
-    tutorial = get_object_or_404(Tutorial, pk=tutorial_id)
-
-    context = {
-        'tutorial': tutorial,
-    }
-
-    return render(request, 'eshop/tutorial_detail.html', context)
-
 @login_required
 def add_tutorial(request):
     if not request.user.is_superuser:
