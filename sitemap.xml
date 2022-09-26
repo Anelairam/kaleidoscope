@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://ci5.herokuapp.com/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/eshop/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/eshop/tutorials/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/events/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/?category=Urban,Landscape,Aerial,Food</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/?category=Urban</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/?category=Landscape</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/?category=Aerial</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/?category=Food</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/1/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/2/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/3/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/4/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/5/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/6/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/7/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/8/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/9/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/10/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/11/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/12/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/13/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/14/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/15/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/16/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/17/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/18/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/19/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/20/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/21/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/22/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/portfolio/23/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci5.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-09-26T15:52:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
