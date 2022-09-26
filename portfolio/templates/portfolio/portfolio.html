@@ -14,10 +14,11 @@
         <!-- Page heading row -->
         <div class="row">
             <div class="col">
-                <h1 class="page_heading text-center">
+                <hr>
+                <h1 class="page_heading text-center mt-2">
                     PORTFOLIO
                 </h1>
-            <hr>
+                <hr>
             </div>
         </div>
         <div class="row">
@@ -29,27 +30,26 @@
                 <div class="row">
                     {% for product in products %}
                         <div class="card" style="width: 18rem;">
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="img_card_preview" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ product.name }}">
+                                    {% if product.image %}
+                                        <img class="img_card_preview" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ product.name }}">
+                                    {% else %}
+                                        <img class="img_card_preview" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+                                    {% endif %}
                                 </a>
                                 <a href="{% url 'product_detail' product.id %}"><h5 class="card-title">{{ product.name }}</h5></a>
+                                {% if request.user.is_superuser %}
+                                    <a href="{% url 'edit_product' product.id %}"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                    <a href="{% url 'delete_product' product.id %}"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                                {% endif %}
                                 <p class="card-text"><i class="fas fa-tag"></i> {{ product.category }}</p>
                                 {% if product.location != NULL %}
                                     <p class="card-text"><i class="fas fa-location-dot"></i> {{ product.location }}</p>
                                 {% else %}
                                     <p class="card-text"><i class="fas fa-location-dot"></i> N/A</p>
                                 {% endif %}
-                                {% if product.price != NULL %}
-                                    {% if request.user.is_authenticated %} 
-                                        <p class="card-text"><i class="fa-sharp fa-solid fa-tag"></i> {{ product.price }}</p>
-                                        <a href="#" class="btn btn-primary">Add</a>
-                                    {% else %}
-                                        <a href="#" class="btn btn-primary">Shop</a>
-                                    {% endif %}
-                                {% else %}
-                                    <a href="{% url 'product_detail' photo.id %}" class="btn btn-primary">Show more</a>
-                                {% endif %}
+                                <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-dark rounded-0">Show more</a>
                             </div>
                         </div>
                     {% endfor %}

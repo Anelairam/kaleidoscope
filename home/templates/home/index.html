@@ -15,6 +15,25 @@
             <div class="col index-base">            
             </div>
         </div>
+        <!-- Modal HTML -->
+        <div id="news_modal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Newsletter Kaleidoscope</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Join the kaleidoscope family! The best way to keep in touch and be informed of our new uploads.</p>
+                        <form>
+                            <input type="email" id="email" name="email" placeholder="Your email" class="p-1">
+                            <button class="btn btn-dark" data-bs-dismiss="modal"><i class="fa-solid fa-arrow-right" id="modal-button"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main content -->
         <div class="row">
             <div class="col py-5 about-col text-center" id="about">
                 <h2>About</h2>
@@ -62,4 +81,17 @@
           </div>
         </div>
     </footer>
+{% endblock %}
+
+
+{% block postloadjs %}
+<script>
+    $(document).ready(function() {
+        $("#news_modal").modal("show");
+        $("#modal-button").on("click", function(e){
+            e.preventDefault();
+            $("#news_modal").modal("hide");
+         });
+    });
+</script>
 {% endblock %}

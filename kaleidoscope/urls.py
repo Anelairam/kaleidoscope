@@ -28,3 +28,6 @@ urlpatterns = [
     path('shopping_cart/', include('shopping_cart.urls')),
     path('checkout/', include('checkout.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404="home.views.handler_not_found"
