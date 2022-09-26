@@ -49,7 +49,7 @@ def add_product(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Product added successfully!')
-            return redirect(reverse('product_detail', args=[product.id]))
+            return redirect(reverse('portfolio'))
         else:
             messages.error(request, 'Failed to add the product, Please ensure that the form is valid!')
     else:
