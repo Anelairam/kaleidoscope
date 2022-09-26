@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from datetime import datetime
 from .models import Event
@@ -37,3 +37,32 @@ def add_event(request):
     }
 
     return render(request, template, context)
+
+
+def edit_event(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    if request.method == 'POST':
+        form = EventForm(request.POST, request.FILES, instance=event)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Event updated successfully!')
+            return redirect(reverse('events'))
+        else:
+            messages.error(request, 'Failed to update the event, Please ensure that the form is valid!')
+    else:
+        form = EventForm(instance=event)
+        messages.info(request, f'You are editing {event.title}')
+
+    template = 'events/edit_event.html'
+    context = {
+        'form': form,
+        'event': event,
+    }
+    return render(request, template, context)
+
+
+def delete_event(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    event.delete()
+    messages.success(request, 'Event deleted')
+    return redirect(reverse('events'))

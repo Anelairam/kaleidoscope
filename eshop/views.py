@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from portfolio.models import Product
 from django.contrib import messages
 
@@ -27,6 +27,17 @@ def tutorials(request):
     return render(request, 'eshop/tutorials.html', context)
 
 
+def tutorial_detail(request, product_id):
+    """The view returns the index page"""
+    tutorial = get_object_or_404(Tutorial, pk=tutorial_id)
+
+    context = {
+        'tutorial': tutorial,
+    }
+
+    return render(request, 'eshop/tutorial_detail.html', context)
+
+
 def add_tutorial(request):
 
     if request.method == 'POST':
@@ -34,7 +45,7 @@ def add_tutorial(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Tutorial added successfully!')
-            return redirect(reverse('add_tutorial'))
+            return redirect(reverse('tutorial_detail', args=[tutorial.id]))
         else:
             messages.error(request, 'Failed to add the tutorial, Please ensure that the form is valid!')
     else:
@@ -45,3 +56,32 @@ def add_tutorial(request):
     }
 
     return render(request, template, context)
+
+
+def edit_tutorial(request, tutorial_id):
+    tutorial = get_object_or_404(Tutorial, pk=tutorial_id)
+    if request.method == 'POST':
+        form = TutorialForm(request.POST, request.FILES, instance=tutorial)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Tutorial updated successfully!')
+            return redirect(reverse('tutorial_detail', args=[tutorial.id]))
+        else:
+            messages.error(request, 'Failed to update the tutorial, Please ensure that the form is valid!')
+    else:
+        form = TutorialForm(instance=tutorial)
+        messages.info(request, f'You are editing {tutorial.title}')
+
+    template = 'eshop/edit_tutorial.html'
+    context = {
+        'form': form,
+        'tutorial': tutorial,
+    }
+    return render(request, template, context)
+
+
+def delete_tutorial(request, tutorial_id):
+    tutorial = get_object_or_404(Tutorial, pk=tutorial_id)
+    tutorial.delete()
+    messages.success(request, 'Tutorial deleted')
+    return redirect(reverse('tutorials'))

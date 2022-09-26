@@ -14,23 +14,23 @@
         <div class="row justify-content-around">
             <div class="col">
                 <div class="image-container">
-                        <a href="{{ product.image.url }}" target="_blank">
+                        <!-- <a href="{{ product.image.url }}" target="_blank">
                             <img class="img-fluid img-elm" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ photo.name }}">
-                        </a>
+                        </a> -->
                 </div>
             </div>
             <div class="col-4 my-auto">
-                <h5 class="mb-0">{{ product.name }}</h5>
+                <h5 class="mb-0">{{ tutorial.name }}</h5>
                 {% if request.user.is_superuser %}
-                    <a href="{% url 'edit_product' product.id %}"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                    <a href="{% url 'delete_product' product.id %}"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                    <a href="{% url 'edit_tutorial' tutorial.id %}"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                    <a href="{% url 'delete_tutorial' tutorial.id %}"><i class="fa-sharp fa-solid fa-trash"></i></a>
                 {% endif %}
-                <p class="mb-0"><strong>Image size: </strong>{{ product.size }}</p>
-                <p class="mb-0"><i class="fas fa-location-dot"></i> {{ product.location }}</p>
-                <p class="mb-0"><i class="fas fa-tag"></i> {{ product.category }}</p>
+                <p class="mb-0"><i class="fas fa-tag"></i> {{ tutorial.category }}</p>
+                <p class="mb-0"><strong>Type: </strong>{{ tutorial.type }}</p>
+                <p class="mb-0"><strong>Difficulty: </strong>{{ tutorial.difficulty }}</p>
                 {% if product.price != NULL %}
                     <p class="mb-0">
-                        <i class="fa-sharp fa-solid fa-tag"></i> {{ product.price }} <i class="fa-thin fa-dollar-sign"></i>
+                        <i class="fa-sharp fa-solid fa-tag"></i> {{ tutorial.price }} <i class="fa-thin fa-dollar-sign"></i>
                     </p>
                 {% endif %}
                 {% if request.user.is_authenticated %} 
@@ -52,7 +52,7 @@
                                     </span>
                                     <span class="text-uppercase">Keep Looking</span>
                                 </a>
-                                {% if product.price != NULL %}
+                                {% if tutorial.price != NULL %}
                                     <input type="submit" class="btn btn-dark rounded-0 text-uppercase mt-5" value="Add to Cart">
                                 {% endif %}                           
                             </div>
