@@ -93,18 +93,90 @@ All photos, tutorials and events have been manually created by myself. Django’
 
 ### Data Models
 ---
+Category Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| name  | CharField  | max_length=10  |
+
+Type Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| name  | CharField  | max_length=25  |
+
 Product Model
 
 | Field  | Field Type | Field Options |
 | ------------- | ------------- |------------- |
 | name  | CharField  | max_length=25  |
-| category  | Content Cell  | 'Category', null=True, blank=True, on_delete=models.SET_NULL  |
+| category  | ForeignKey  | 'Category', null=True, blank=True, on_delete=models.SET_NULL  |
 | type  | ForeignKey  | 'Type', null=True, on_delete=models.SET_NULL  |
-| location  | ForeignKey  | max_length=25, null=True, blank=True  |
+| location  | CharField  | max_length=25, null=True, blank=True  |
 | size  | CharField  | max_length=200, null=True, blank=True  |
 | price  | CharField  | max_digits=6, decimal_places=2, null=True, blank=True  |
 | description  | CharField  | max_length=200, null=True, blank=True  |
 | image  | ImageField  | null=True, blank=True  |
+
+Difficulty Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| name  | CharField  | max_length=20  |
+
+Event Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| title  | CharField  | max_length=25  |
+| category  | ForeignKey  | 'Category', null=True, blank=True, on_delete=models.SET_NULL  |
+| day  | DateField  |   |
+| type  | ForeignKey  | 'Type', null=True, on_delete=models.SET_NULL  |
+| difficulty  | ForeignKey | 'Difficulty', null=True, on_delete=models.SET_NULL  |
+| startin_at  | TimeField  |   |
+| ending_at  | TimeField  |   |
+| description  | CharField  | max_length=500  |
+
+Tutorial Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| name  | CharField  | max_length=25  |
+| category  | ForeignKey  | 'Category', null=True, blank=True, on_delete=models.SET_NULL  |
+| type  | ForeignKey  | 'Type', null=True, on_delete=models.SET_NULL  |
+| difficulty  | ForeignKey | 'Difficulty', null=True, on_delete=models.SET_NULL  |
+| file  | FileField  | null=True, validators=[FileExtensionValidator( ['mp4'] ) ]  |
+| price  | DecimalField  |  max_digits=6, decimal_places=2, null=True, blank=True |
+| description  | CharField  | max_length=200, null=True, blank=True  |
+
+Order Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| order_number  | CharField  | max_length=32, null=False, editable=False  |
+| full_name  | CharField  | max_length=50, null=False, blank=False  |
+| email  | EmailField  | max_length=254, null=False, blank=FalseL  |
+| phone_number  | CharField | max_length=20, null=False, blank=False  |
+| country  | CountryField  | blank_label='Country', null=False, blank=False |
+| postcode  | CharField  |  max_length=20, null=True, blank=True |
+| town_or_city  | CharField  | max_length=40, null=False, blank=False  |
+| street_address1  | CharField  |  max_length=80, null=False, blank=False |
+| street_address2  | CharField  | max_length=80, null=True, blank=True  |
+| county  | CharField  |  max_length=80, null=True, blank=True |
+| date  | DateTimeField  | auto_now_add=True  |
+| order_total  | DecimalField  |  max_digits=10, decimal_places=2, null=False, default=0 |
+| grand_total  | DecimalField  | max_digits=10, decimal_places=2, null=False, default=0  |
+| original_cart  | TextField  |  null=False, blank=False, default='' |
+| stripe_pid  | CharField  | max_length=254, null=False, blank=False, default=''  |
+
+OrderLineItem Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| order  | ForeignKey  | Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'  |
+| product  | ForeignKey  | Product, null=False, blank=False, on_delete=models.CASCADE  |
+| quantity  | IntegerField  | null=False, blank=False, default=0  |
+| lineitem_total  | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False |
 
 
 ### Technologies Used
