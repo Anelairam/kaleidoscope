@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-anelairam-kaleidoscope-i6yrovy3vqg.ws-eu67.gitpod.io']
 
