@@ -11,8 +11,9 @@
         </div>
     </div>
 {% endblock %}
-
+<!-- Add tutorial page -->
 {% block content %}
+<!-- page header -->
     <div class="container-fluid ">
         <div class="row">
             <div class="col page_heading text-center mt-2">
@@ -20,6 +21,7 @@
                 <h5>Add a tutorial</h5>
             </div>
         </div>
+        <!-- form element to add tutorial -->
         <div class="row">
             <div class="col page_heading mx-auto">
                 <form method="POST" action="{% url 'add_tutorial' %}" enctype="multipart/form-data" class="mx-auto w-25 edit_add_form">

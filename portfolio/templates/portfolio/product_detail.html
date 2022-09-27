@@ -8,16 +8,18 @@
         </div>
     </div>
 {% endblock %}
-
+<!-- Photo detail page -->
 {% block content %}
     <div class="container-fluid cart">
         <div class="row justify-content-around">
             <div class="col">
+                <!-- photo image column -->
                 <div class="image-container">
                         <a href="{{ product.image.url }}" target="_blank">
                             <img class="img-fluid img-elm" src="{{ MEDIA_URL }}{{product.image}}" alt="{{ photo.name }}">
                         </a>
                 </div>
+                <!-- photo infomation column and shop -->
             </div>
             <div class="col col-md-4 my-auto">
                 <h5 class="mb-0">{{ product.name }}</h5>

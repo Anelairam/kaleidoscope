@@ -11,7 +11,7 @@
         </div>
     </div>
 {% endblock %}
-
+<!-- edit photo page -->
 {% block content %}
     <div class="container-fluid checkout_container">
         <div class="row">
@@ -20,6 +20,7 @@
                 <h5>Edit a Photo</h5>
             </div>
         </div>
+        <!-- edit photo form -->
         <div class="row">
             <div class="col page_heading mx-auto">
                 <form method="POST" action="{% url 'edit_product' product.id %}" enctype="multipart/form-data" class="mx-auto w-25 edit_add_form">

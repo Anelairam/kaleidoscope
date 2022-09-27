@@ -11,7 +11,7 @@
         </div>
     </div>
 {% endblock %}
-
+<!-- edit event page -->
 {% block content %}
     <div class="container-fluid checkout_container">
         <div class="row">
@@ -20,7 +20,7 @@
                 <h5>Edit an Event</h5>
             </div>
         </div>
-
+<!-- form for event editing -->
         <div class="row">
             <div class="col page_heading mx-auto">
                 <form method="POST" action="{% url 'edit_event' event.id %}" enctype="multipart/form-data" class="mx-auto w-25 edit_add_form">
