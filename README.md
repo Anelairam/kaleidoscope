@@ -79,11 +79,8 @@ The wireframes are created with Balsamiq
 <img width="895" alt="product" src="https://user-images.githubusercontent.com/25570623/192452496-5be38507-b345-4f44-8a67-9d156191c817.png">
 <img width="895" alt="shoppingcart" src="https://user-images.githubusercontent.com/25570623/192452501-877b448a-29fc-46fa-ad29-21746f64ff3b.png">
 <img width="895" alt="εσηοπ" src="https://user-images.githubusercontent.com/25570623/192452504-4c79374b-671a-4e9c-90a7-37f60b628f8c.png">
-<img width="895" alt="events" src="[https://user-images.githubusercontent.com/25570623/192452504-4c79374b-671a-4e9c-90a7-37f60b628f8c.png](https://user-images.githubusercontent.com/25570623/192453704-dc878f23-4383-4dd4-96db-78c283b97598.png)">
-<img width="895" alt="tutorials" src="[https://user-images.githubusercontent.com/25570623/192452504-4c79374b-671a-4e9c-90a7-37f60b628f8c.png](https://user-images.githubusercontent.com/25570623/192453786-f1454ba4-d9f2-4a4a-acfc-bc5c75ab646b.png)">
-
-
-
+<img width="958" alt="events" src="https://user-images.githubusercontent.com/25570623/192454564-58762d0d-a2ee-4a35-8aeb-2d5e7225b341.png">
+<img width="958" alt="tutorials" src="https://user-images.githubusercontent.com/25570623/192454568-6781a0b8-daf2-44db-bfbb-2d7c54918f83.png">
 
 ### Design
 
