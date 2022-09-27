@@ -55,6 +55,8 @@ The website main goal is to make the Visiting User interested into purchasing ph
 
 #### User Stories
 ---
+![image](https://user-images.githubusercontent.com/25570623/192503727-77c633fa-9772-40ef-b45a-4567fb5b6988.png)
+
 
 ### Skeleton Plane
 ---
