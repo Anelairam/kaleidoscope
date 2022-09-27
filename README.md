@@ -72,6 +72,8 @@ The website features a Homepage with a main navbar to navigate the main sections
 
 ### Wireframes
 ---
+[Home]<img width="895" alt="home" src="https://user-images.githubusercontent.com/25570623/192452273-aeb9ba99-e27e-4d91-9d8d-b19f9f1b30eb.png">
+
 
 ### Design
 ---
