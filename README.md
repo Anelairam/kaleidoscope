@@ -2,7 +2,7 @@
 ---
 
 ## Introduction
-* * Website Link goes here * *
+[Kaleidoscope](https://ci5.herokuapp.com/)
 
 Kaleidoscope is my fifth and last project submision for the Full Stack E-Commerece Diploma by Code Institute.
 
@@ -35,6 +35,7 @@ The project's theme is a photographer's website, where the photographer as the o
 * [Technologies Used](#technologies-used)
 * [Testing](#testing-validation)
 * [Deployment](#deployment)
+* [Unfixxed Bugs & Errors](#deployment)
 * [Acknowledgements](#acknowledgements)
 
 </p>
@@ -72,16 +73,29 @@ The website features a Homepage with a main navbar to navigate the main sections
 
 ### Wireframes
 ---
+The wireframes are created with Balsamiq
+ 
+<img width="895" alt="home" src="https://user-images.githubusercontent.com/25570623/192452273-aeb9ba99-e27e-4d91-9d8d-b19f9f1b30eb.png">
+<img width="895" alt="portfolio" src="https://user-images.githubusercontent.com/25570623/192452420-239a0552-42e4-4c0c-ab15-03156a855c46.png">
+<img width="895" alt="product" src="https://user-images.githubusercontent.com/25570623/192452496-5be38507-b345-4f44-8a67-9d156191c817.png">
+<img width="895" alt="shoppingcart" src="https://user-images.githubusercontent.com/25570623/192452501-877b448a-29fc-46fa-ad29-21746f64ff3b.png">
+<img width="895" alt="εσηοπ" src="https://user-images.githubusercontent.com/25570623/192452504-4c79374b-671a-4e9c-90a7-37f60b628f8c.png">
+<img width="958" alt="events" src="https://user-images.githubusercontent.com/25570623/192454564-58762d0d-a2ee-4a35-8aeb-2d5e7225b341.png">
+<img width="958" alt="tutorials" src="https://user-images.githubusercontent.com/25570623/192454568-6781a0b8-daf2-44db-bfbb-2d7c54918f83.png">
 
 ### Design
+
 ---
 
 #### Images
 ---
-* Allmost all images that are in use for the website are from [Pexels](#https://pexels.com/) .
+* All images that are in use for the website are from [Pexels](#https://pexels.com/) .
 
 #### Colours
 ---
+After a lot of color testing with the final product and some research to colour constrasting and design, I chose these to colours to be mq main palete for the colour scheme of the website.These two colours give a minimal and elegant touch to the website and serve the purpose of it great, as the main focus should be the vubrant colours of the photographers work.
+![image](https://user-images.githubusercontent.com/25570623/192451303-50519d0d-eaa7-4bb7-a8b1-367b3bd8e845.png)
+
 
 ### Database View
 ---
@@ -89,9 +103,95 @@ In the development of Kaleidoscope, I have used SQLite3 database as part of Djan
 
 All photos, tutorials and events have been manually created by myself. Django’s authentication system and Django Allauth are also integrated sets of Django and helped manage authentication, registration and account management. The schema below has been created with dbdiagram.io:
 
+![image](https://user-images.githubusercontent.com/25570623/192444226-4f30c318-3a49-4ea5-9373-b641b2cf27c8.png)
 
 ### Data Models
 ---
+Category Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| name  | CharField  | max_length=10  |
+
+Type Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| name  | CharField  | max_length=25  |
+
+Product Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| name  | CharField  | max_length=25  |
+| category  | ForeignKey  | 'Category', null=True, blank=True, on_delete=models.SET_NULL  |
+| type  | ForeignKey  | 'Type', null=True, on_delete=models.SET_NULL  |
+| location  | CharField  | max_length=25, null=True, blank=True  |
+| size  | CharField  | max_length=200, null=True, blank=True  |
+| price  | CharField  | max_digits=6, decimal_places=2, null=True, blank=True  |
+| description  | CharField  | max_length=200, null=True, blank=True  |
+| image  | ImageField  | null=True, blank=True  |
+
+Difficulty Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| name  | CharField  | max_length=20  |
+
+Event Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| title  | CharField  | max_length=25  |
+| category  | ForeignKey  | 'Category', null=True, blank=True, on_delete=models.SET_NULL  |
+| day  | DateField  |   |
+| type  | ForeignKey  | 'Type', null=True, on_delete=models.SET_NULL  |
+| difficulty  | ForeignKey | 'Difficulty', null=True, on_delete=models.SET_NULL  |
+| startin_at  | TimeField  |   |
+| ending_at  | TimeField  |   |
+| description  | CharField  | max_length=500  |
+
+Tutorial Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| name  | CharField  | max_length=25  |
+| category  | ForeignKey  | 'Category', null=True, blank=True, on_delete=models.SET_NULL  |
+| type  | ForeignKey  | 'Type', null=True, on_delete=models.SET_NULL  |
+| difficulty  | ForeignKey | 'Difficulty', null=True, on_delete=models.SET_NULL  |
+| file  | FileField  | null=True, validators=[FileExtensionValidator( ['mp4'] ) ]  |
+| price  | DecimalField  |  max_digits=6, decimal_places=2, null=True, blank=True |
+| description  | CharField  | max_length=200, null=True, blank=True  |
+
+Order Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| order_number  | CharField  | max_length=32, null=False, editable=False  |
+| full_name  | CharField  | max_length=50, null=False, blank=False  |
+| email  | EmailField  | max_length=254, null=False, blank=FalseL  |
+| phone_number  | CharField | max_length=20, null=False, blank=False  |
+| country  | CountryField  | blank_label='Country', null=False, blank=False |
+| postcode  | CharField  |  max_length=20, null=True, blank=True |
+| town_or_city  | CharField  | max_length=40, null=False, blank=False  |
+| street_address1  | CharField  |  max_length=80, null=False, blank=False |
+| street_address2  | CharField  | max_length=80, null=True, blank=True  |
+| county  | CharField  |  max_length=80, null=True, blank=True |
+| date  | DateTimeField  | auto_now_add=True  |
+| order_total  | DecimalField  |  max_digits=10, decimal_places=2, null=False, default=0 |
+| grand_total  | DecimalField  | max_digits=10, decimal_places=2, null=False, default=0  |
+| original_cart  | TextField  |  null=False, blank=False, default='' |
+| stripe_pid  | CharField  | max_length=254, null=False, blank=False, default=''  |
+
+OrderLineItem Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| order  | ForeignKey  | Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'  |
+| product  | ForeignKey  | Product, null=False, blank=False, on_delete=models.CASCADE  |
+| quantity  | IntegerField  | null=False, blank=False, default=0  |
+| lineitem_total  | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False |
+
 
 ### Technologies Used
 ---
@@ -122,6 +222,12 @@ All photos, tutorials and events have been manually created by myself. Django’
 ### Deployment
 ---
 Kaleidoscope has been created on Gitpod, with commits pushed directly to the GitHub repository. The project has been deployed to Heroku, which was synchronized to GitHub to update the live site. The static files are stored in Amazon AWS and the payment infrastructure is managed by Stripe's software and APIs.
+
+## Unfixed Bugs & Errors
+* Css bug in the nav bar on dropdown menu of e-shop
+* After wiping out of the database to debug, the stripe payments functionality is not working properly
+* Css styles do not work in the deployed site as AWS required 24 hour gap to validate the accounts information, the account was created at 27/09 07:00 am.
+<img width="958" alt="deployment" src="https://user-images.githubusercontent.com/25570623/192458252-6e76e2fb-a853-420e-a02a-3688424d7bf3.png">
 
 ### Acknowledgements
 ---
