@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /accounts/
 Disallow: /shopping_cart/
+Disallow: /checkout/
 Sitemap: https://https://ci5.herokuapp.com/sitemap.xml
