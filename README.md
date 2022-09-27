@@ -93,6 +93,18 @@ All photos, tutorials and events have been manually created by myself. Django’
 
 ### Data Models
 ---
+Product Model
+
+| Field  | Field Type | Field Options |
+| ------------- | ------------- |------------- |
+| name  | CharField  | max_length=25  |
+| category  | Content Cell  | 'Category', null=True, blank=True, on_delete=models.SET_NULL  |
+| type  | ForeignKey  | 'Type', null=True, on_delete=models.SET_NULL  |
+| location  | ForeignKey  | max_length=25, null=True, blank=True  |
+| size  | CharField  | max_length=200, null=True, blank=True  |
+| price  | CharField  | max_digits=6, decimal_places=2, null=True, blank=True  |
+| description  | CharField  | max_length=200, null=True, blank=True  |
+| image  | ImageField  | null=True, blank=True  |
 
 
 ### Technologies Used
