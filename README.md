@@ -74,15 +74,11 @@ The website features a Homepage with a main navbar to navigate the main sections
 ---
 The wireframes are created with Balsamiq
  
-![Home]<img width="895" alt="home" src="https://user-images.githubusercontent.com/25570623/192452273-aeb9ba99-e27e-4d91-9d8d-b19f9f1b30eb.png">
-Portfolio
-![Portfolio]<img width="895" alt="portfolio" src="https://user-images.githubusercontent.com/25570623/192452420-239a0552-42e4-4c0c-ab15-03156a855c46.png">
-Product
-![Product]<img width="895" alt="product" src="https://user-images.githubusercontent.com/25570623/192452496-5be38507-b345-4f44-8a67-9d156191c817.png">
-Shopping Cart
-![Shopping Cart]<img width="895" alt="shoppingcart" src="https://user-images.githubusercontent.com/25570623/192452501-877b448a-29fc-46fa-ad29-21746f64ff3b.png">
-Eshop
-![Eshop]<img width="895" alt="εσηοπ" src="https://user-images.githubusercontent.com/25570623/192452504-4c79374b-671a-4e9c-90a7-37f60b628f8c.png">
+<img width="895" alt="home" src="https://user-images.githubusercontent.com/25570623/192452273-aeb9ba99-e27e-4d91-9d8d-b19f9f1b30eb.png">
+<img width="895" alt="portfolio" src="https://user-images.githubusercontent.com/25570623/192452420-239a0552-42e4-4c0c-ab15-03156a855c46.png">
+<img width="895" alt="product" src="https://user-images.githubusercontent.com/25570623/192452496-5be38507-b345-4f44-8a67-9d156191c817.png">
+<img width="895" alt="shoppingcart" src="https://user-images.githubusercontent.com/25570623/192452501-877b448a-29fc-46fa-ad29-21746f64ff3b.png">
+<img width="895" alt="εσηοπ" src="https://user-images.githubusercontent.com/25570623/192452504-4c79374b-671a-4e9c-90a7-37f60b628f8c.png">
 
 
 ### Design
