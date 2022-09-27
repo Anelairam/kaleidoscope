@@ -78,10 +78,13 @@ The website features a Homepage with a main navbar to navigate the main sections
 
 #### Images
 ---
-* Allmost all images that are in use for the website are from [Pexels](#https://pexels.com/) .
+* All images that are in use for the website are from [Pexels](#https://pexels.com/) .
 
 #### Colours
 ---
+After a lot of color testing with the final product and some research to colour constrasting and design, I chose these to colours to be mq main palete for the colour scheme of the website.These two colours give a minimal and elegant touch to the website and serve the purpose of it great, as the main focus should be the vubrant colours of the photographers work.
+![image](https://user-images.githubusercontent.com/25570623/192451303-50519d0d-eaa7-4bb7-a8b1-367b3bd8e845.png)
+
 
 ### Database View
 ---
