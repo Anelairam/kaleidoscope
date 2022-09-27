@@ -212,11 +212,8 @@ OrderLineItem Model
 
 ### Testing & Validation
 ---
-* A full manual testing file can be found here.
-* For python code validation I have been using pep8 online:
-  * Lines left too long just when breaking them would have compromised the code integrity.
-* For HTML validation I have used validatorW3
-* For CSS validation I have used jigsaw.W3
+* For HTML validation I have used validatorW3 [validatorW3](https://validator.w3.org/nu/)
+* For CSS validation I have used jigsaw.W3 [jigsaw]([https://validator.w3.org/nu/](https://jigsaw.w3.org/css-validator/))
 * For responsiveness testing I have used Google DevTools
 
 ### Deployment
