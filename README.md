@@ -219,7 +219,40 @@ OrderLineItem Model
 ### Manual Testing
 
 #### Viewing and Navigation
-1. The main navigation bar allows the user to navigate through the website, view a list of available item categories on eshop.
+1. The main navigation bar allows the user to navigate through the website, view a list of available item categories on eshop. with each category page linking to another page showing all the available products based on the category. The photos and portfolio pages consist of a sorting bar that allows the user to filter the photos to preference based on the category.
+2. After selecting the desired photos the user is able to complete a purchase, if he is login in. Redircting to the product detail page the user can have an overview of the product details and if it is available for sale the price and the abilty to add to to his shopping cart. Heading to the checkout the user can complete the purchase by first having an overview of his selected products and their prices.
+3. On the navigation bar there is a shopping cart that the user can access only if he is logged in so he can complete the purchase. Next to the shopping cart icon there available also the total amount of the items that are in the cart the specific momemnt.
+
+#### Registration and User Accounts
+1. On the top navigation bar the user can enter the login/sign up or pages by clicking on the person icon.
+2. If needed, the User can reset their password by clicking below the Sign In form to the link "Forgot Password?", this will lead them to the Password Reset page.
+3. On the top navigation bar already registered users can log out and only uperusers can have access to the add photo, add event, add tutorial functionality. This functions allow the superusers to add new photos, events and tutorials to the website.
+
+#### Purchasing and Checkout
+1. Entering on the desired product detail page, the User can add it to their shopping bag using the "Add to Bag" button, if the product is available for sale.
+2. Each time a product is added to the Shopping Bag, the total amount will update in the shopping cart page, showing in detail the price for each item.
+3. Clicking the top right cart icon, the User will be directed to the Shopping cart page, which displays all the products in the cart.
+4. The quantity of the items in the bag is editable, the User can decrease or increase the amount of the same item in the cart.
+5. The Checkout page contains a form that requires a valid credit card to continue with the purchase. Use any of these test cards to simulate a payment:
+        Payment succeeds
+
+        4242 4242 4242 4242
+
+        Payment requires authentication
+
+        4000 0025 0000 3155
+
+        Payment is declined
+
+        4000 0000 0000 9995
+
+6. A message will show up on the form if the User inserts an invalid credit card number.
+7. When the purchase is completed successfully the user is redirected to a summary of the order completed.
+8. After every successful purchase, the shopping cart displayed on the top of the page will reset its total to zero and it will be empty.
+9. A summary of the order is shown when the order is completed.
+10. An email confirmation is sent to the User after each purchase.
+
+NOTE: The purchasing testing was completed before the need of erasing the database and the existing bug occured.
 
 ### Deployment
 ---
