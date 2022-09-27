@@ -89,9 +89,11 @@ In the development of Kaleidoscope, I have used SQLite3 database as part of Djan
 
 All photos, tutorials and events have been manually created by myself. Django’s authentication system and Django Allauth are also integrated sets of Django and helped manage authentication, registration and account management. The schema below has been created with dbdiagram.io:
 
+![image](https://user-images.githubusercontent.com/25570623/192444226-4f30c318-3a49-4ea5-9373-b641b2cf27c8.png)
 
 ### Data Models
 ---
+
 
 ### Technologies Used
 ---
