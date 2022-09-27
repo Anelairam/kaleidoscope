@@ -216,14 +216,22 @@ OrderLineItem Model
 * For CSS validation I have used jigsaw.W3 [jigsaw]([https://validator.w3.org/nu/](https://jigsaw.w3.org/css-validator/))
 * For responsiveness testing I have used Google DevTools
 
+### Manual Testing
+
+#### Viewing and Navigation
+1. The main navigation bar allows the user to navigate through the website, view a list of available item categories on eshop.
+
 ### Deployment
 ---
 Kaleidoscope has been created on Gitpod, with commits pushed directly to the GitHub repository. The project has been deployed to Heroku, which was synchronized to GitHub to update the live site. The static files are stored in Amazon AWS and the payment infrastructure is managed by Stripe's software and APIs.
 
-## Unfixed Bugs & Errors
+### Unfixed Bugs & Errors
 * Css bug in the nav bar on dropdown menu of e-shop
 * After wiping out of the database to debug, the stripe payments functionality is not working properly, the purchase is handle and the order is received to the database but the validation and edit of the card do not work properly. 
 * During deployment the image links seems to not render properly showing a broken link image
+
+### Facebook screen shot
+<img width="907" alt="facebook_page" src="https://user-images.githubusercontent.com/25570623/192490357-148eaf5a-bcba-4a06-9892-83c34605fde6.png">
 
 
 ### Acknowledgements
