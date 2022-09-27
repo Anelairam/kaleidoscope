@@ -225,9 +225,9 @@ Kaleidoscope has been created on Gitpod, with commits pushed directly to the Git
 
 ## Unfixed Bugs & Errors
 * Css bug in the nav bar on dropdown menu of e-shop
-* After wiping out of the database to debug, the stripe payments functionality is not working properly
-* Css styles do not work in the deployed site as AWS required 24 hour gap to validate the accounts information, the account was created at 27/09 07:00 am.
-<img width="958" alt="deployment" src="https://user-images.githubusercontent.com/25570623/192458252-6e76e2fb-a853-420e-a02a-3688424d7bf3.png">
+* After wiping out of the database to debug, the stripe payments functionality is not working properly, the purchase is handle and the order is received to the database but the validation and edit of the card do not work properly. 
+* During deployment the image links seems to not render properly showing a broken link image
+
 
 ### Acknowledgements
 ---
