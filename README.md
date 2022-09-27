@@ -35,6 +35,7 @@ The project's theme is a photographer's website, where the photographer as the o
 * [Technologies Used](#technologies-used)
 * [Testing](#testing-validation)
 * [Deployment](#deployment)
+* [Unfixxed Bugs & Errors](#deployment)
 * [Acknowledgements](#acknowledgements)
 
 </p>
@@ -221,6 +222,11 @@ OrderLineItem Model
 ### Deployment
 ---
 Kaleidoscope has been created on Gitpod, with commits pushed directly to the GitHub repository. The project has been deployed to Heroku, which was synchronized to GitHub to update the live site. The static files are stored in Amazon AWS and the payment infrastructure is managed by Stripe's software and APIs.
+
+## Unfixed Bugs & Errors
+* Css bug in the nav bar on dropdown menu of e-shop
+* After wiping out of the database to debug, the stripe payments functionality is not working properly
+* Css styles do not work in the deployed site as AWS required 24 hour gap to validate the accounts information, the account was created at 27/09 07:00 am
 
 ### Acknowledgements
 ---
